@@ -1,0 +1,1 @@
+"C:\Program Files\qemu\qemu-system-arm.exe" -cpu cortex-m3 --machine lm3s6965evb --nographic -gdb tcp:3333 -S -kernel "C:\dev\from-scratch-arm\app\target\thumbv7m-none-eabi\debug\app"
