@@ -2,8 +2,8 @@
 /* 1K = 1 KiBi = 1024 bytes */
 MEMORY
 {
-  FLASH : ORIGIN = 0x00000000, LENGTH = 256K
-  RAM : ORIGIN = 0x20000000, LENGTH = 64K
+  FLASH (rx) : ORIGIN = 0x10000000, LENGTH = 2M
+  RAM (xrw) : ORIGIN = 0x20000000, LENGTH = 264K
 }
 
 /* The entry point is the reset handler */
