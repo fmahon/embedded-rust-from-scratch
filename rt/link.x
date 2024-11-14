@@ -1,5 +1,15 @@
 /* Memory layout of the LM3S6965 microcontroller */
 /* 1K = 1 KiBi = 1024 bytes */
+
+PROVIDE(NMI = DefaultExceptionHandler);
+PROVIDE(HardFault = DefaultExceptionHandler);
+PROVIDE(MemManage = DefaultExceptionHandler);
+PROVIDE(BusFault = DefaultExceptionHandler);
+PROVIDE(UsageFault = DefaultExceptionHandler);
+PROVIDE(SVCall = DefaultExceptionHandler);
+PROVIDE(PendSV = DefaultExceptionHandler);
+PROVIDE(SysTick = DefaultExceptionHandler);
+
 MEMORY
 {
   FLASH (rx) : ORIGIN = 0x10000000, LENGTH = 2M
@@ -10,6 +20,7 @@ MEMORY
 ENTRY(Reset);
 
 EXTERN(RESET_VECTOR);
+EXTERN(EXCEPTIONS);
 
 SECTIONS
 {

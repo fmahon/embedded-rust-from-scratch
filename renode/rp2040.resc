@@ -1,0 +1,17 @@
+using sysbus
+mach create "RP2040"
+
+# Configuration du CPU et de la mémoire
+sysbus.cpu0 Cortex-M0
+sysbus.cpu1 Cortex-M0
+sysbus.memory 0x20000000 0x00042000 # 264KB RAM
+sysbus.flash 0x10000000 0x100000   # 1MB flash
+
+# Configurer les périphériques
+sysbus.uart0 UARTPL011 @0x40034000
+uart0 CreateTerminal
+sysbus.gpio GPIOPort @0x40014000
+
+sysbus LoadELF @app/target/thumbv6m-none-eabi/debug/app
+# Démarrer la simulation
+start
